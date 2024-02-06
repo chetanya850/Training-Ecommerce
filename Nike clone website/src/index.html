@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./output.css" />
     <title>Document</title>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
       }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -23,15 +33,14 @@
             class="w-14 m-2"
           />
         </div>
-        <ul class="flex space-x-4 mt-5 align-middle mr-5">
+        <ul class="flex space-x-4 mt-5 align-middle">
           <li class="cursor-pointer">Men</li>
           <li class="cursor-pointer">Women</li>
-          <li class="cursor-pointer">Kids</li>
-          <li class="cursor-pointer">New and Featured</li>
-          <li class="cursor-pointer">Sales</li>
+          <!-- <li class="cursor-pointer">Kids</li> -->
+          <!-- <li class="cursor-pointer">New and Featured</li>
+          <li class="cursor-pointer">Sales</li> -->
         </ul>
         <input
-          class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -41,30 +50,76 @@
       </nav>
     </header>
 
-    <!-- First Image  -->
-    <div id="firstimage" class="container mx-auto">
-      <img
-        src="https://cdn.pixabay.com/photo/2015/07/27/18/53/jump-863058_1280.jpg"
-        alt="neymar"
-        class="w-full"
-      />
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://cdn.pixabay.com/photo/2015/07/27/18/53/jump-863058_1280.jpg"
+            alt="image"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://c02.purpledshub.com/uploads/sites/41/2021/08/Alamy_2F3Y8J0-crop-ff47efc.jpg?w=1175&webp=1"
+            alt="image"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/17/17-best-nike-running-shoes-15275034-1440.jpg"
+            alt="image"
+          />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
 
     <!-- Card Section -->
-    <div
-      id="shoes"
-      class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-10"
-    >
-      <!-- Cards -->
+    <div class="flex align-middle justify-center">
+      <div
+        id="shoes"
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-2"
+      >
+        <!-- Cards -->
+      </div>
     </div>
+
+    <br />
+    <div>
+      <h1
+        style="
+          color: rgb(51, 15, 15);
+          font-family: 'Poppins', sans-serif;
+          font-weight: strong;
+          font-size: 40px;
+          text-align: center;
+        "
+      >
+        On Special Offers
+      </h1>
+    </div>
+    <br />
 
     <video width="100%" autoplay muted loop>
       <source
-        src="./images/Nike FC Presents the Footballverse.mp4"
+        src="https://cdn.runrepeat.com/storage/uploads/Buying%20Guides/how-we-test-running.mp4"
         type="video/mp4"
       />
       <source src="movie.ogg" type="video/ogg" />
     </video>
+    <!-- First Image  -->
+    <div id="firstimage" class="container mx-auto">
+      <img
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/B9FF/production/_117751674_satan-shoes1.jpg.webp"
+        alt="img"
+        class="w-full mx-auto"
+      />
+    </div>
 
     <footer
       class="page-footer shadow bg-gray-400 flex flex-row align-middle justify-between"
@@ -87,10 +142,16 @@
           </li>
         </ul>
       </div>
-      <div>
-        <img src="" alt="" />
-      </div>
     </footer>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      })
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>

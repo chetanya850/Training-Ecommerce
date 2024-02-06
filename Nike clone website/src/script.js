@@ -82,6 +82,34 @@ const data = [
       'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/s1amp7uosrn0nqpsxeue/phantom-vision-elite-dynamic-fit-fg-firm-ground-soccer-cleat-19Kv1V.jpg',
     slug: 'nike-phantom-vision-elite-dynamic-fit-fg',
     featured: 0
+  },
+  {
+    id: 9,
+    name: 'Nike Mercurial Superfly 7 Pro MDS FG',
+    brand: 'NIKE',
+    gender: 'MEN',
+    category: 'FOOTBALL',
+    price: 137,
+    is_in_inventory: true,
+    items_left: 3,
+    imageURL:
+      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-a52a8aec-22dc-4982-961b-75c5f4c72805/mercurial-superfly-7-pro-mds-fg-firm-ground-soccer-cleat-mhcpdN.jpg',
+    slug: 'nike-mercurial-superfly-7-pro-mds-fg',
+    featured: 0
+  },
+  {
+    id: 11,
+    name: 'Nike Air Max 90',
+    brand: 'NIKE',
+    gender: 'KIDS',
+    category: 'CASUAL',
+    price: 100,
+    is_in_inventory: true,
+    items_left: 3,
+    imageURL:
+      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8439f823-86cf-4086-81d2-4f9ff9a66866/air-max-90-big-kids-shoe-1wzwJM.jpg',
+    slug: 'nike-air-max-90',
+    featured: 0
   }
 ]
 
@@ -217,8 +245,14 @@ const searchData = () => {
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                 ${data[i].gender}
               </span>
+              
             </div>
-          </div>`
+
+            
+            
+          </div>
+          
+          `
       }
     }
     document.getElementById('shoes').innerHTML = showDiv
