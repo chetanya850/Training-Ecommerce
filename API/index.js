@@ -56,40 +56,25 @@ app.post('/products', (req, res) => {
 })
 
 // splice(start, deleteCount)
+//
+
 app.delete('/products/:id', (req, res) => {
-  let deleted = false
-  const objectid = parseInt(req.params.id)
+  let newarr = []
+  const objectId = parseInt(req.params.id)
   for (let i = 0; i < products.length; i++) {
-    if (products[i].id === objectid) {
-      products.splice(i, 1)
-      deleted = true
-      break
-    } else {
-      res.status(404).send('Object not found')
+    if (objectId !== products[i].id) {
+      newarr.push(products[i])
     }
   }
-  if (deleted) {
+
+  if (newarr.length !== products.length) {
     res.status(200).send('deleted')
+  } else {
+    res.status(400).send('not deleted')
   }
+
+  products = newarr
 })
-
-// app.delete('/products/:id', (req, res) => {
-//   let newarr = []
-//   const objectId = parseInt(req.params.id)
-//   for (let i = 0; i < products.length; i++) {
-//     if (!objectId === products[i].id) {
-//       newarr.push(products[i])
-//     }
-//   }
-
-//   if (!newarr.length == products.length) {
-//     res.status(200).send('deleted')
-//   } else {
-//     res.status(400).send('not deleted')
-//   }
-
-//   product = newarr
-// })
 
 app.put('/products/:id', (req, res) => {
   const objectId = parseInt(req.params.id)
