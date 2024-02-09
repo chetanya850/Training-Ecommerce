@@ -49,7 +49,7 @@ app.get('/products/:id', (req, res) => {
 // sadas
 app.post('/products', (req, res) => {
   const newItem = req.body
-  newItem.id = Math.random()
+  newItem.id = Math.random() + 1
   console.log(newItem)
   products.push(newItem)
   res.status(201).send('Created')
