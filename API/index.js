@@ -1,5 +1,4 @@
-const express = require('express')
-
+import express from 'express'
 const app = express()
 app.use(express.json())
 
@@ -49,7 +48,7 @@ app.get('/products/:id', (req, res) => {
 // sadas
 app.post('/products', (req, res) => {
   const newItem = req.body
-  newItem.id = Math.random() + 1
+  newItem.id = Math.random()
   console.log(newItem)
   products.push(newItem)
   res.status(201).send('Created')
